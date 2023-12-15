@@ -5,7 +5,8 @@ app.use(express.json());
 
 const PORT = 3000;
 
-app.get('/ping', (_req, res) => {
+app.get('/ping', (req, res) => {
+	console.log({ req });
 	console.log('Some pinged');
 	res.send('pong');
 });
