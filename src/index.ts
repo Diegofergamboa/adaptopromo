@@ -1,15 +1,9 @@
-import express from 'express';
+import app from './app';
+import { connectDB } from './db';
+import './db';
 
-const app = express();
-app.use(express.json());
-
+connectDB();
 const PORT = 3000;
-
-app.get('/ping', (_req, res) => {
-	console.log('Some pinged');
-	res.send('pong');
-});
-
 app.listen(PORT, () => {
-	console.log(`Server running on port ${PORT}`);
+	console.log(`Server on port ${PORT}`);
 });
